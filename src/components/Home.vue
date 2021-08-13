@@ -3,19 +3,22 @@
       <!-- 头部区域 -->
       <el-header>
         <div>
-            <img src="../assets/heima.png" alt="">
+            <img src="../assets/logo.eb8e4955.svg" alt="" style="padding: 0 0 0 15px;">
             <span><b>特色农业气象微信小程序后台管理系统</b></span>
         </div>
         <!-- header菜单区域 -->
             <!-- node设置菜单为横项菜单 -->
         <el-menu
+        default-active="./Welcome"
         mode="horizontal"
         background-color="#0F8C75"
         text-color="#fff"
-        active-text-color="#ffd04b"
+        active-text-color="#fff"
+        @open="handleOpen"
+        @close="handleClose"
         router>
         <!-- 一级菜单区域 -->
-        <el-menu-item index="1">
+        <el-menu-item index="./Welcome">
             <!-- 图标 -->
             <i class="el-icon-house" style="color: white;"></i>
             <!-- 文本 -->
@@ -52,7 +55,7 @@
             <i class="el-icon-user" style="color: white;"></i>
             <span>系统管理员</span>
             </template>
-            <el-menu-item index="2-1">
+            <el-menu-item index="../login">
                 <i class="el-icon-circle-close" style="color: white;"></i>
                 <span type="info" @click="logout">安全退出</span>
             </el-menu-item>
@@ -91,13 +94,12 @@ export default {
       const { data: res } = await this.$http.get('menus')
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
       this.menulist = res.data
-      console.log(res)
     }
   }
 }
 </script>
 
-<style Lang="less" scoped>
+<style scoped>
 .home-container {
     height: 100%;
 }
@@ -123,5 +125,12 @@ export default {
 .el-main {
     background-color: #F2F2F2;
 }
-
+.el-menu-item.is-active {
+   background-color: #0A6F5D !important;
+   border-bottom-color: #0A6F5D !important;
+}
+.el-menu-item.is-hover.is-active{
+  background-color: #0F8C75 !important;
+  border-bottom-color: none;
+}
 </style>

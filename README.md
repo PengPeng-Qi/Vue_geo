@@ -5,20 +5,20 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 启动vue cli
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+vue ui
 ```
 
-### Lints and fixes files
+### 启动项目
 ```
-npm run lint
+任务 --> serve --> 运行 --> 启动App
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Login
+![登陆页面](./dist/img/Login.png)
+
+### Welcome
+![首页](./dist/img/Welcome.png)
+
+> 默认账号:`admin` 默认密码:`123456`

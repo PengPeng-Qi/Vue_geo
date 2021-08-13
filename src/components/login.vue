@@ -1,6 +1,12 @@
 <template>
     <div class="login_contaioner">
         <div class="login_box">
+            <div id="header">
+              <h1><b>云南省特色农业气象微信小程序后台管理系统</b></h1>
+            </div>
+            <div id='side'>
+              <img src="../assets/login.png" style="padding: 0 0 0 40px; width: 300px; height: auto;">
+            </div>
             <!-- 登陆表单区域 -->
             <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="0px" class="login_form">
                 <!-- 用户名 -->
@@ -16,6 +22,9 @@
                     <el-button type="success" round id="button_1" @click="login">登录</el-button>
                 </el-form-item>
             </el-form>
+            <div id="footer">
+              <span>版权所有 <code>&#64;</code> 云南省气象中心 云南省高原特色农业气象中心</span>
+            </div>
         </div>
     </div>
 </template>
@@ -26,8 +35,8 @@ export default {
     return {
       // 登录表单绑定的数据对象
       loginForm: {
-        username: 'admin',
-        password: '123456'
+        username: '',
+        password: ''
       },
       // 表单验证规则对象
       loginFormRules: {
@@ -63,20 +72,18 @@ export default {
 }
 </script>
 
-<style Lang="less" scoped>
-/*
-body {
-    background-image: url("../assets/YunNan.PNG");
-}
-*/
+<style scoped>
 .login_contaioner {
-    background-color: #2f4f6f;
+    background-image: url('../assets/login_background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: auto;
     height: 100%;
 }
 
 .login_box {
-    height: 300px;
-    width: 450px;
+    height: 450px;
+    width: 650px;
     background-color: #fff;
     border-radius: 27px;
     position: absolute;
@@ -87,10 +94,10 @@ body {
 
 .login_form {
     position: absolute;
-    right: 20px;
-    top: 70px;
-    width: 45%;
-    padding: 0 20px 0px 0px;
+    right: 1px;
+    top: 160px;
+    width: 40%;
+    padding: 0 0px 0px 0px;
     box-sizing: border-box;
 /*
     border: 1px #000 solid;
@@ -109,4 +116,18 @@ body {
     padding-top: 5px;
 }
 
+#header {
+    font-family: Microsoft Yahei;
+    text-align: center;
+    color: #02866E;
+    font-size: 12px;
+    padding: 20px;
+}
+
+#footer {
+  position: absolute;
+  right:135px;
+  bottom: 30px;
+  font-size: 14px;
+}
 </style>
