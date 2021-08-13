@@ -5,14 +5,9 @@
 npm install
 ```
 
-### 启动vue cli
-```
-vue ui
-```
-
 ### 启动项目
 ```
-任务 --> serve --> 运行 --> 启动App
+npm run serve
 ```
 
 ### Login
